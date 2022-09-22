@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Javascript Project Personal #1</title>
+    <script src="script.js"></script>
 </head>
 
 <body>
@@ -24,8 +25,28 @@
         yang akan dicari nilai unik nya dan parameter kedua <code>type</code> masukkan nilai tipe data pada array
         tersebut (string).
         Dalam satu array hanya bisa berisi satu tipe data saja string atau number.</p>
-    <p>Contoh <samp>findUniqValue([ 1, 1, 1, 2, 1, 1], "number")</samp>, <samp>findUniqValue([ 1, 1, 1, 2, 1, 1],
-            "number")</samp></p>
+    <p>Contoh sebagai berikut
+    <ul>
+        <li><code>findUniqValue([1, 0, 0], "number") // 1</code></li>
+        <li><code>findUniqValue([3, 10, 3, 3, 3], "number") // 10</code></li>
+        <li><code>findUniqValue([1, 1,
+                2, 1, 1], "number") // 2</code></li>
+        <li><code>
+                findUniqValue(["abc", "acb", "bac", "foo", "bca", "cab", "cba"], "string") // foo</code></li>
+        <li><code>
+                findUniqValue(
+                ["Tom Marvolo Riddle", "I am Lord Voldemort", "Harry Potter"],
+                "string") // Harry Potter</code></li>
+        <li><code>
+
+                findUniqValue(
+                ["Aa", "aaa", "aaaaa", "BbBb", "Aaaa", "AaAaAa", "a"],
+                "string") // BbBb
+            </code></li>
+        <li><code>findUniqValue([" ", "a", " "], "string") // a</code></li>
+    </ul>
+    </p>
+
 </body>
 
 </html>
