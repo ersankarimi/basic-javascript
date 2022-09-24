@@ -7,11 +7,11 @@ const findUniqValue = (array, type) => {
 			(num) => array.indexOf(num) === array.lastIndexOf(num)
 		)[0];
 	}
-	const arrOfChars = array.map((str) =>
+	const strArrOfCharsValue = array.map((str) =>
 		[...new Set([...str.toLowerCase()])].sort().join("")
 	);
 
-	const uniqeValueIndex = arrOfChars.findIndex(
+	const uniqeValueIndex = strArrOfCharsValue.findIndex(
 		(value, _, strArr) =>
 			strArr.indexOf(value) === strArr.lastIndexOf(value)
 	);
