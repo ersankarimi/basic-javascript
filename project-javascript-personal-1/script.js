@@ -18,10 +18,3 @@ const findUniqValue = (array, type) => {
 
 	return array[uniqeValueIndex];
 };
-
-console.log(
-	findUniqValue(
-		["Tom Marvolo Riddle", "I am Lord Voldemort", "Harry Potter"],
-		"string"
-	)
-);
