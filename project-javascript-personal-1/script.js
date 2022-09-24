@@ -1,5 +1,7 @@
 // Find uniqe value of array (string or number)
 const findUniqValue = (array, type) => {
+	if (type !== "number" && type !== "string") return;
+
 	if (type === "number") {
 		return array.filter(
 			(num) => array.indexOf(num) === array.lastIndexOf(num)
