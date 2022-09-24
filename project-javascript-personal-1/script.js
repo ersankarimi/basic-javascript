@@ -24,5 +24,7 @@ const findUniqValue = (array, type) => {
     (value, _, strArr) => strArr.indexOf(value) === strArr.lastIndexOf(value)
   );
 
-  return array[uniqeValueIndex];
+  return uniqeValueIndex !== -1
+    ? array[uniqeValueIndex]
+    : "There is no unique string";
 };
