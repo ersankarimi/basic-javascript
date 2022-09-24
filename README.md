@@ -6,4 +6,4 @@ Proyek, atau lainnya yang dibuat selama program Bootcamp Codepolitan x Catamyst.
 
 ## List Proyek
 
--   [ ] [Javascript Proyek Personal #1](project-javascript-personal-1/index.html)
+-   [ ] [Javascript Proyek Personal #1](project-javascript-personal-1/)
