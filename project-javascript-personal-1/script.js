@@ -7,14 +7,21 @@ const findUniqValue = (array, type) => {
 			(num) => array.indexOf(num) === array.lastIndexOf(num)
 		)[0];
 	}
-	const strOfSetArr = array.map((str) =>
+	const arrOfChars = array.map((str) =>
 		[...new Set([...str.toLowerCase()])].sort().join("")
 	);
 
-	const uniqeValueIndex = strOfSetArr.findIndex(
+	const uniqeValueIndex = arrOfChars.findIndex(
 		(value, _, strArr) =>
 			strArr.indexOf(value) === strArr.lastIndexOf(value)
 	);
 
 	return array[uniqeValueIndex];
 };
+
+console.log(
+	findUniqValue(
+		["Tom Marvolo Riddle", "I am Lord Voldemort", "Harry Potter"],
+		"string"
+	)
+);
