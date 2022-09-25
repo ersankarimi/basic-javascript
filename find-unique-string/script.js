@@ -1,4 +1,4 @@
-const isAllArrValuesString = (array) => {
+const isAllArrayValuesString = (array) => {
   for (const value of array) {
     if (typeof value !== "string") {
       return false;
@@ -8,20 +8,20 @@ const isAllArrValuesString = (array) => {
 };
 
 const arrayMap = (array, manipulationValueFunction) => {
-  const newAarr = [];
+  const newArray = [];
   for (const value of array) {
-    newAarr.push(manipulationValueFunction(value));
+    newArray.push(manipulationValueFunction(value));
   }
-  return newAarr;
+  return newArray;
 };
 
 const findUniqueString = (array) => {
-  if (!isAllArrValuesString(array)) {
+  if (!isAllArrayValuesString(array)) {
     throw new Error("Please make sure all value of array is string");
   }
 
-  const strArrOfCharsValues = arrayMap(array, (arrValue) => {
-    return [...new Set([...arrValue.toLowerCase()])].sort().join("");
+  const strArrOfCharsValues = arrayMap(array, (arrayValue) => {
+    return [...new Set([...arrayValue.toLowerCase()])].sort().join("");
   });
 
   for (const value of strArrOfCharsValues) {
