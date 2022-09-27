@@ -2,26 +2,39 @@
 const isAllArrayValuesString = (array) => {
   return array.every((value) => typeof value === "string");
 };
+
 const findUniqueString = (array) => {
   try {
-    if (isAllArrayValuesString(array)) {
-      const arrayStringOfAllCharacters = array.map((value) => {
-        return [...new Set([...value.toLowerCase()])].sort().join("");
-      });
-
-      const uniqueStringIndex = arrayStringOfAllCharacters.findIndex(
-        (value) =>
-          arrayStringOfAllCharacters.indexOf(value) ===
-          arrayStringOfAllCharacters.lastIndexOf(value)
+    if (!array?.length) {
+      throw new Error("Please pass an array to the parameter");
+    }
+    if (array?.length < 3) {
+      throw new Error("Please pass an array with at least 3 items");
+    }
+    if (!isAllArrayValuesString(array)) {
+      throw new Error(
+        "Please make sure all values of array is string data type"
       );
-
-      return array[uniqueStringIndex];
     }
 
-    throw new Error(
-      "Please make sure all values of array is string data type!"
+    const arrayStringOfAllCharacters = array.map((value) => {
+      return [...new Set([...value.toLowerCase()])].sort().join("");
+    });
+
+    const uniqueStringIndex = arrayStringOfAllCharacters.findIndex(
+      (value) =>
+        arrayStringOfAllCharacters.indexOf(value) ===
+        arrayStringOfAllCharacters.lastIndexOf(value)
     );
+
+    return array[uniqueStringIndex];
   } catch (error) {
-    throw new Error(error.message);
+    console.error(error);
   }
+};
+
+const testCases = () => {
+  console.assert(findUniqueString(), "failed");
+  console.assert(findUniqueString([]), "failed");
+  console.assert(findUniqueString([1, 2, 3]), "failed");
 };
