@@ -3,13 +3,15 @@ const isAllArrayValuesString = (array) => {
   return array.every((value) => typeof value === "string");
 };
 
-const findUniqueString = (array) => {
+const findUniqueString = (array = []) => {
   try {
-    if (!array?.length) {
-      throw new Error("Please pass an array to the parameter");
+    if (!array.length) {
+      throw new Error(
+        "Please pass array into parameter with minimum value in it is 3"
+      );
     }
-    if (array?.length < 3) {
-      throw new Error("Please pass an array with at least 3 items");
+    if (array.length < 3) {
+      throw new Error("Please pass an array with at least 3 values");
     }
     if (!isAllArrayValuesString(array)) {
       throw new Error(
